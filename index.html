@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAPD Rampart — Community Police Station</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="resimler/logo.png" />
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <img src="resimler/logo.png" alt="LAPD Rampart Logo" />
+    <div class="nav-brand-text">
+      <span>LOS ANGELES POLICE DEPT.</span>
+      <span>RAMPART DIVISION</span>
+    </div>
+  </a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="index.html" class="active">Ana Sayfa</a></li>
+    <li><a href="about.html">Hakkımızda</a></li>
+    <li><a href="team.html">Ekip Kadrosu</a></li>
+    <li><a href="forms.html">Başvuru Formları</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle" aria-label="Menüyü aç">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="page">
+  <section class="hero">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline>
+        <source src="video/lapd.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        LAPD <span class="accent">RAMPART</span>
+      </h1>
+      <p class="hero-subtitle">Community Police Station</p>
+      <p class="hero-desc">
+        Disiplin, bütünlük ve toplumsal sorumluluk ilkeleriyle Los Angeles'ın
+        kalbinde güvenliği kesintisiz sağlıyoruz.
+      </p>
+      <div class="hero-cta">
+        <a href="about.html" class="btn btn-primary">Hakkımızda</a>
+        <a href="forms.html" class="btn btn-outline">Başvuru Yap</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">2025</div>
+        <div class="hero-stat-label">Kuruluş Yılı</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="alert-bar">
+    <div class="container">
+      <div class="alert-bar-inner">
+        <div class="ticker">
+          <span>LAPD Rampart Division — Personel alımları başladı</span>
+          <span>Toplum güvenliği birinci önceliğimizdir</span>
+          <span>Disiplin · Dürüstlük · Hizmet</span>
+          <span>Başvurular için Başvuru Formları bölümünü ziyaret edin</span>
+          <span>LAPD Rampart Division — Personel alımları başladı</span>
+          <span>Toplum güvenliği birinci önceliğimizdir</span>
+          <span>Disiplin · Dürüstlük · Hizmet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ KOMUTA KADROSU ═══════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Liderlik</div>
+        <h2 class="section-title">Komuta Kadrosu</h2>
+        <div class="divider"></div>
+        <p class="section-sub">
+          İstasyonumuzu yöneten liderlik ekibimiz; disiplin, sorumluluk ve
+          profesyonellik temelinde hizmet vermektedir.
+        </p>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: 1fr;">
+        <div class="leader-card">
+          <div class="leader-img-wrap">
+            <img src="resimler/allan.png" alt="Allan Houser" />
+          </div>
+          <div class="leader-info">
+            <div class="leader-rank">Sergeant II</div>
+            <div class="leader-name">Allan Houser</div>
+            <div class="leader-meta">
+              <span class="leader-tag">📍 Central Patrol Divison</span>
+              <span class="leader-tag">🔐 Tam Operasyonel Yetki</span>
+              <span class="leader-tag">📡 ● Aktif</span>
+            </div>
+            <div class="leader-desc">
+              "Halkın güvenliği için her gün aynı özveriyle göreve çıkmak,
+              bizi biz yapan şeydir. Rampart ailesi olarak disiplin ve
+              dürüstlük her zaman önceliğimizdir."
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 36px;">
+        <a href="team.html" class="btn btn-outline">Tüm Ekibi Gör</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOTOĞRAF GALERİSİ ═══════════ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Operasyonel</div>
+        <h2 class="section-title">Sahadaki Rampart</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="photo-grid">
+
+        <div class="photo-item" onclick="openLightbox('resimler/foto1.jpg','Devriye Operasyonu')">
+          <img src="resimler/foto1.jpg" alt="Devriye Operasyonu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto1.jpg</span></div>
+          <div class="photo-overlay">🔍</div>
+          <div class="photo-caption">Devriye Operasyonu</div>
+        </div>
+
+        <div class="photo-item" onclick="openLightbox('resimler/foto2.jpg','İstasyon Roll Call')">
+          <img src="resimler/foto2.jpg" alt="İstasyon Roll Call" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto2.jpg</span></div>
+          <div class="photo-overlay">🔍</div>
+          <div class="photo-caption">İstasyon Roll Call</div>
+        </div>
+
+        <div class="photo-item" onclick="openLightbox('resimler/foto3.jpg','K9 Operasyonu')">
+          <img src="resimler/foto3.jpg" alt="K9 Operasyonu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto3.jpg</span></div>
+          <div class="photo-overlay">🔍</div>
+          <div class="photo-caption">K9 Operasyonu</div>
+        </div>
+
+        <div class="photo-item" onclick="openLightbox('resimler/foto4.jpg','Trafik Denetimi')">
+          <img src="resimler/foto4.jpg" alt="Trafik Denetimi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto4.jpg</span></div>
+          <div class="photo-overlay">🔍</div>
+          <div class="photo-caption">Trafik Denetimi</div>
+        </div>
+
+        <div class="photo-item" onclick="openLightbox('resimler/foto5.jpg','Özel Operasyon')">
+          <img src="resimler/foto5.jpg" alt="Özel Operasyon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto5.jpg</span></div>
+          <div class="photo-overlay">🔍</div>
+          <div class="photo-caption">Özel Operasyon</div>
+        </div>
+
+        <div class="photo-item" onclick="openLightbox('resimler/foto6.jpg','Ekip Fotoğrafı')">
+          <img src="resimler/foto6.jpg" alt="Ekip Fotoğrafı" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto6.jpg</span></div>
+          <div class="photo-overlay">🔍</div>
+          <div class="photo-caption">Ekip Fotoğrafı</div>
+        </div>
+
+        <div class="photo-item" onclick="openLightbox('resimler/foto7.jpg','Toplum Etkinliği')">
+          <img src="resimler/foto7.jpg" alt="Toplum Etkinliği" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto7.jpg</span></div>
+          <div class="photo-overlay">🔍</div>
+          <div class="photo-caption">Toplum Etkinliği</div>
+        </div>
+
+        <div class="photo-item" onclick="openLightbox('resimler/foto8.jpg','Gece Devriyesi')">
+          <img src="resimler/foto8.jpg" alt="Gece Devriyesi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto8.jpg</span></div>
+          <div class="photo-overlay">🔍</div>
+          <div class="photo-caption">Gece Devriyesi</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LİGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightboxImg" src="" alt="" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <!-- ═══════════ BİRİMLER ═══════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Organizasyon</div>
+        <h2 class="section-title">Birimlerimiz</h2>
+        <div class="divider"></div>
+        <p class="section-sub">
+          Akademi eğitimini tamamladıktan sonra uzmanlık alanına göre
+          aşağıdaki birimlerden birinde görev alabilirsin.
+        </p>
+      </div>
+
+      <div class="card-grid card-grid-3">
+
+        <div class="card unit-card">
+          <div class="unit-icon"><img src="resimler/logo.png" alt="Central Patrol Division" /></div>
+          <div class="unit-status active">Aktif — Tam Kadro</div>
+          <div class="unit-name">Central Patrol Division</div>
+          <div class="unit-desc">İstasyonun temel operasyonel gücü. 7/24 devriye, olay müdahalesi ve bölge güvenliğinden sorumludur.</div>
+        </div>
+
+        <div class="card unit-card">
+          <div class="unit-icon"><img src="resimler/birimlogo/dedektif.png" alt="Detective Division" /></div>
+          <div class="unit-status active">Aktif — Soruşturmada</div>
+          <div class="unit-name">Detective Division</div>
+          <div class="unit-desc">Suç soruşturması, delil toplama ve saha analizlerini yürüten dedektiflik birimi.</div>
+        </div>
+
+        <div class="card unit-card">
+          <div class="unit-icon"><img src="resimler/logo.png" alt="Traffic Services Detail" /></div>
+          <div class="unit-status active">Aktif — Saha Denetimi</div>
+          <div class="unit-name">Traffic Services Detail</div>
+          <div class="unit-desc">Trafik denetimi, kaza soruşturması ve yol güvenliği etkinliklerinden sorumlu birim.</div>
+        </div>
+
+        <div class="card unit-card">
+          <div class="unit-icon"><img src="resimler/birimlogo/ınternalaffairs.png" alt="Internal Affairs Bureau" /></div>
+          <div class="unit-status active">Aktif — Denetimde</div>
+          <div class="unit-name">Internal Affairs Bureau</div>
+          <div class="unit-desc">Personel davranışı, etik standartlar ve iç disiplin süreçlerini denetleyen birim.</div>
+        </div>
+
+        <div class="card unit-card">
+          <div class="unit-icon"><img src="resimler/birimlogo/swat.png" alt="Special Operations Division" /></div>
+          <div class="unit-status active">Aktif</div>
+          <div class="unit-name">Special Operations Division</div>
+          <div class="unit-desc">Yüksek riskli operasyonlar ve planlı müdahaleler için görevlendirilen seçkin taktik birim.</div>
+        </div>
+
+        <div class="card unit-card">
+          <div class="unit-icon"><img src="resimler/birimlogo/air.png" alt="Air Support Division" /></div>
+          <div class="unit-status active">Aktif</div>
+          <div class="unit-name">Air Support Division</div>
+          <div class="unit-desc">Hava gözetleme, arama-kurtarma ve taktik destek operasyonları için helikopter birimi.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ DUYURULAR ═══════════ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Güncel</div>
+        <h2 class="section-title">Son Duyurular</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="card-grid card-grid-2">
+        <div class="card" style="padding: 28px;">
+          <div style="font-size:11px; letter-spacing:2px; color:var(--gold); font-family:'Oswald',sans-serif; margin-bottom:10px;">📌 PERSONEL ALIMI</div>
+          <h3 style="font-family:'Oswald',sans-serif; font-size:18px; color:#fff; margin-bottom:10px;">Yeni Dönem Personel Alımları Başladı</h3>
+          <p style="font-size:13.5px; color:var(--text-muted); line-height:1.75; margin-bottom:16px;">LAPD Rampart bünyesinde yeni dönem Officer alım süreci başlamıştır. Başvuru koşulları ve sınav tarihleri için Başvuru Formları bölümünü ziyaret edin.</p>
+          <div style="font-size:12px; color:var(--text-muted);">▸ 2026 — Personel Şubesi</div>
+        </div>
+        <div class="card" style="padding: 28px;">
+          <div style="font-size:11px; letter-spacing:2px; color:var(--gold); font-family:'Oswald',sans-serif; margin-bottom:10px;">📌 OPERASYONEL GÜNCELLEME</div>
+          <h3 style="font-family:'Oswald',sans-serif; font-size:18px; color:#fff; margin-bottom:10px;">Rampart Bölgesi Güvenlik Raporu</h3>
+          <p style="font-size:13.5px; color:var(--text-muted); line-height:1.75; margin-bottom:16px;">İstasyonumuz bu dönem bölgedeki suç oranlarını azaltmak adına yoğunlaştırılmış devriye ve toplum etkinlikleri planlamıştır.</p>
+          <div style="font-size:12px; color:var(--text-muted);">▸ 2026 — Komuta Birimi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="resimler/logo.png" alt="LAPD Rampart" />
+          <p>Los Angeles Police Department — Rampart Division. Disiplin, dürüstlük ve topluma hizmet ilkeleriyle kesintisiz faaliyet gösteren bir kolluk kuvveti topluluğu.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasyon</h4>
+          <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="team.html">Ekip Kadrosu</a></li>
+            <li><a href="forms.html">Başvuru Formları</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Birimler</h4>
+          <ul>
+            <li><a href="#">Central Patrol Division</a></li>
+            <li><a href="#">Detective Division</a></li>
+            <li><a href="#">Traffic Services</a></li>
+            <li><a href="#">Special Operations</a></li>
+            <li><a href="#">Internal Affairs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurumsal</h4>
+          <ul>
+            <li><a href="about.html">Misyon &amp; Vizyon</a></li>
+            <li><a href="forms.html">Kariyer</a></li>
+            <li><a href="forms.html">Şikayet Başvurusu</a></li>
+            <li><a href="forms.html">Övgü Başvurusu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LAPD Rampart Community Police Station. Tüm hakları saklıdır.</p>
+        <p>Los Angeles, CA 90057</p>
+      </div>
+      <p class="footer-disclaimer" style="text-align:center; margin-top:16px;">
+        Bu site FiveM rol yapma topluluğuna aittir. Gerçek LAPD veya herhangi bir resmi devlet kurumuyla bağlantısı yoktur.
+      </p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu   = document.getElementById('navMenu');
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+  function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>

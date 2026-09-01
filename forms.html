@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Başvuru Formları — LAPD Rampart Division</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="resimler/logo.png" />
+  <style>
+    .success-msg {
+      display: none;
+      background: rgba(22,163,74,.12);
+      border: 1px solid rgba(22,163,74,.3);
+      color: #4ade80;
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+    .tab-btn {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 12px 22px;
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: .2s;
+      margin-bottom: -1px;
+    }
+    .tab-btn:hover { color: #fff; }
+    .tab-btn.active-tab { color: var(--gold); border-bottom-color: var(--gold); }
+    .tab-panel { display: none; }
+    .tab-panel.active-panel { display: block; }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+    }
+    .checkbox-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--blue);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .checkbox-group label {
+      font-size: 14px;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .req-badge {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      background: rgba(26,95,176,.15);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+    }
+    .req-badge.pass { background: rgba(22,163,74,.1); border-color: rgba(22,163,74,.3); color: #4ade80; }
+    .req-badge.fail { background: rgba(239,68,68,.1); border-color: rgba(239,68,68,.25); color: #f87171; }
+    .req-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .req-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg-navy); border: 1px solid var(--border); border-radius: 4px; }
+    .req-item-text { font-size: 14px; color: var(--text); }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <img src="resimler/logo.png" alt="LAPD Rampart Logo" />
+    <div class="nav-brand-text">
+      <span>LOS ANGELES POLICE DEPT.</span>
+      <span>RAMPART DIVISION</span>
+    </div>
+  </a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="about.html">Hakkımızda</a></li>
+    <li><a href="team.html">Ekip Kadrosu</a></li>
+    <li><a href="forms.html" class="active">Başvuru Formları</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle" aria-label="Menüyü aç">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(22,163,74,.12); border:1px solid rgba(22,163,74,.3); padding:6px 18px; border-radius:40px; font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:3px; color:#4ade80; margin-bottom:20px;">
+        ✓ Başvurular Açık — 2026
+      </div>
+      <h1 class="page-hero-title">Ekibimize Katılın</h1>
+      <p class="page-hero-sub">
+        LAPD Rampart Division bünyesinde görev almak için doğru adayları
+        arıyoruz. Disiplin ve profesyonellikle birlikte çalışacağımız
+        güvenilir personel için başvurularımız açıktır.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════ AŞAMALAR ═══════════ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Süreç</div>
+        <h2 class="section-title">Alım Süreci</h2>
+        <div class="divider"></div>
+        <p class="section-sub">Personel alım süreci dört temel aşamadan oluşmaktadır.</p>
+      </div>
+
+      <div class="form-steps">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-title">Ön Başvuru</div>
+          <div class="step-desc">Aşağıdaki form üzerinden kimlik ve kişisel bilgilerinizin sisteme iletilmesi.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-title">Arşiv Araştırması</div>
+          <div class="step-desc">Sabıka kaydı, geçmiş ve mesleki referanslarınız titizlikle incelenir.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-title">Sözlü Mülakat</div>
+          <div class="step-desc">Deneyimli memurlar tarafından dürüstlük ve karar alma beceriniz değerlendirilir.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <div class="step-title">Akademi Giriş</div>
+          <div class="step-desc">Fiziksel ve hukuki hazırlık için eğitim akademisine başarılı kabul edilir.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FORM LINKLERI ═══════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Başvuru Türleri</div>
+        <h2 class="section-title">Tüm Bilgileri Eksiksiz Doldurun</h2>
+        <div class="divider"></div>
+      </div>
+
+      <!-- TAB BAR -->
+      <div class="tab-bar">
+        <button class="tab-btn active-tab" data-tab="ekip">Ekip Başvurusu</button>
+        <button class="tab-btn" data-tab="ovgu">Övgü Başvurusu</button>
+        <button class="tab-btn" data-tab="ridealong">Ridealong Başvurusu</button>
+        <button class="tab-btn" data-tab="sikayet">Şikayet Başvurusu</button>
+      </div>
+
+      <!-- ── EKİP BAŞVURUSU ── -->
+      <div class="tab-panel active-panel" id="tab-ekip">
+        <div class="form-panel" style="padding:0; overflow:hidden; background:transparent; border:none;">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdr-Hdv--5_886aLIeVQUThKFrStBLdY9Xs-HDU7F7cyPce0w/viewform?embedded=true"
+            width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
+            style="border-radius:6px; border:1px solid var(--border); display:block;">
+            Yükleniyor…
+          </iframe>
+        </div>
+      </div>
+
+      <!-- ── ÖVGÜ BAŞVURUSU ── -->
+      <div class="tab-panel" id="tab-ovgu">
+        <div class="form-panel" style="padding:0; overflow:hidden; background:transparent; border:none;">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScD9GurCVhW8Hvx500fHhv53_DwmpaebW-o00UUOBz2eQ5b2A/viewform?embedded=true"
+            width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
+            style="border-radius:6px; border:1px solid var(--border); display:block;">
+            Yükleniyor…
+          </iframe>
+        </div>
+      </div>
+
+      <!-- ── RIDEALONG ── -->
+      <div class="tab-panel" id="tab-ridealong">
+        <div class="form-panel" style="padding:0; overflow:hidden; background:transparent; border:none;">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeyd9xkgzZEW7yU5KStEa0GPlhL_olIa_sq_hh3SoJA_3UnKw/viewform?embedded=true"
+            width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
+            style="border-radius:6px; border:1px solid var(--border); display:block;">
+            Yükleniyor…
+          </iframe>
+        </div>
+      </div>
+
+      <!-- ── ŞİKAYET ── -->
+      <div class="tab-panel" id="tab-sikayet">
+        <div class="form-panel" style="padding:0; overflow:hidden; background:transparent; border:none;">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeP-MlS3LvrSHHi0rWGcahVhsp0x1gauPxlk4QqKjUguvyvNw/viewform?embedded=true"
+            width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
+            style="border-radius:6px; border:1px solid var(--border); display:block;">
+            Yükleniyor…
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="resimler/logo.png" alt="LAPD Rampart" />
+          <p>Los Angeles Police Department — Rampart Division. Disiplin, dürüstlük ve topluma hizmet ilkeleriyle kesintisiz faaliyet gösteren bir kolluk kuvveti topluluğu.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasyon</h4>
+          <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="team.html">Ekip Kadrosu</a></li>
+            <li><a href="forms.html">Başvuru Formları</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Birimler</h4>
+          <ul>
+            <li><a href="#">Central Patrol Division</a></li>
+            <li><a href="#">Detective Division</a></li>
+            <li><a href="#">Traffic Services</a></li>
+            <li><a href="#">Special Operations</a></li>
+            <li><a href="#">Internal Affairs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurumsal</h4>
+          <ul>
+            <li><a href="about.html">Misyon &amp; Vizyon</a></li>
+            <li><a href="forms.html">Kariyer</a></li>
+            <li><a href="forms.html">Şikayet Başvurusu</a></li>
+            <li><a href="forms.html">Övgü Başvurusu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LAPD Rampart Community Police Station. Tüm hakları saklıdır.</p>
+        <p>Los Angeles, CA 90057</p>
+      </div>
+      <p class="footer-disclaimer" style="text-align:center; margin-top:16px;">
+        Bu site FiveM rol yapma topluluğuna aittir. Gerçek LAPD veya herhangi bir resmi devlet kurumuyla bağlantısı yoktur.
+      </p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  /* Nav toggle */
+  const toggle = document.getElementById('navToggle');
+  const menu   = document.getElementById('navMenu');
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+  /* Tab switching */
+  const tabBtns   = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active-tab'));
+      tabPanels.forEach(p => p.classList.remove('active-panel'));
+      btn.classList.add('active-tab');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active-panel');
+    });
+  });
+
+  /* Form submit */
+  function submitForm(e, formId, msgId) {
+    e.preventDefault();
+    const form = document.getElementById(formId);
+    const msg  = document.getElementById(msgId);
+    msg.style.display = 'block';
+    form.reset();
+    setTimeout(() => { msg.style.display = 'none'; }, 6000);
+  }
+</script>
+</body>
+</html>

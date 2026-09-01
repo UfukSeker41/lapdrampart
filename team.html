@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ekip Kadrosu — LAPD Rampart Division</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="resimler/logo.png" />
+  <style>
+    .rank-section { margin-bottom: 56px; }
+    .rank-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-left: 4px solid var(--gold);
+      padding-left: 14px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .rank-count {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 18px;
+    }
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-style: italic;
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+    }
+    .hr-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+    .filter-btn {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      transition: .2s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active-filter {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <img src="resimler/logo.png" alt="LAPD Rampart Logo" />
+    <div class="nav-brand-text">
+      <span>LOS ANGELES POLICE DEPT.</span>
+      <span>RAMPART DIVISION</span>
+    </div>
+  </a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="about.html">Hakkımızda</a></li>
+    <li><a href="team.html" class="active">Ekip Kadrosu</a></li>
+    <li><a href="forms.html">Başvuru Formları</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle" aria-label="Menüyü aç">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">Rampart Division</div>
+      <h1 class="page-hero-title">Ekip Kadrosu</h1>
+      <p class="page-hero-sub">
+        Rampart Division'ın komuta yapısı, saha personeli ve özel birim üyeleri.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════ KOMUTA ═══════════ -->
+  <section class="section">
+    <div class="container">
+
+      <!-- SUPERVISORY STAFF -->
+      <div style="margin-bottom:60px;">
+        <div class="staff-group-label">SUPERVISORY STAFF</div>
+        <div class="rank-section">
+          <div class="rank-label">
+            <span>Sergeant II</span>
+            <span class="rank-count">01 KİŞİ</span>
+          </div>
+          <div class="member-grid" style="margin-bottom:32px;">
+            <div class="member-card gold-card" onclick="openMember(this)"
+              data-name="Allan Houser" data-rank="Sergeant II" data-badge="5154"
+              data-unit="Supervisory Staff" data-medals="—" data-disc="—" data-photo="resimler/allan.png">
+              <div class="member-avatar" style="border-color:var(--gold);"><img src="resimler/allan.png" alt="Allan Houser" /></div>
+              <div class="member-rank">SERGEANT II</div>
+              <div class="member-name">Allan Houser</div>
+              <div class="member-badge">#5154</div>
+            </div>
+          </div>
+          <div class="rank-label">
+            <span>Sergeant I</span>
+            <span class="rank-count">02 KİŞİ</span>
+          </div>
+          <div class="member-grid">
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Ryan Parker" data-rank="Sergeant I" data-badge="7183"
+              data-unit="Supervisory Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Ryan Parker" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">SERGEANT I</div>
+              <div class="member-name">Ryan Parker</div>
+              <div class="member-badge">#7183</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Axrel Gray" data-rank="Sergeant I" data-badge="5375"
+              data-unit="Supervisory Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Axrel Gray" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">SERGEANT I</div>
+              <div class="member-name">Axrel Gray</div>
+              <div class="member-badge">#5375</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="hr-divider" />
+
+      <!-- DETECTIVE SUPERVISORY -->
+      <div style="margin-bottom:60px;">
+        <div class="staff-group-label">DETECTIVE SUPERVISORY</div>
+        <div class="rank-section">
+          <div class="rank-label"><span>Detective Supervisor</span><span class="rank-count">00 KİŞİ</span></div>
+          <div class="member-grid"><div class="empty-state">Henüz Detective Supervisor atanmamıştır.</div></div>
+        </div>
+      </div>
+
+      <hr class="hr-divider" />
+
+      <!-- SENIOR LEAD STAFF -->
+      <div style="margin-bottom:60px;">
+        <div class="staff-group-label">SENIOR LEAD STAFF</div>
+        <div class="rank-section">
+          <div class="rank-label"><span>Senior Lead Officer</span><span class="rank-count">00 KİŞİ</span></div>
+          <div class="member-grid"><div class="empty-state">Henüz Senior Lead Officer atanmamıştır.</div></div>
+        </div>
+      </div>
+
+      <hr class="hr-divider" />
+
+      <!-- DETECTIVE STAFF -->
+      <div style="margin-bottom:60px;">
+        <div class="staff-group-label">DETECTIVE STAFF</div>
+        <div class="rank-section">
+          <div class="rank-label">
+            <span>Detective I</span>
+            <span class="rank-count">01 KİŞİ</span>
+          </div>
+          <div class="member-grid">
+            <div class="member-card" onclick="openMember(this)"
+              data-name="James Carter" data-rank="Detective I" data-badge="15031"
+              data-unit="Detective Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="James Carter" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">DETECTIVE I</div>
+              <div class="member-name">James Carter</div>
+              <div class="member-badge">#15031</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="hr-divider" />
+
+      <!-- FIELD STAFF -->
+      <div style="margin-bottom:60px;">
+        <div class="staff-group-label">FIELD STAFF</div>
+        <div class="rank-section">
+
+          <div class="rank-label">
+            <span>Officer III</span>
+            <span class="rank-count">04 KİŞİ</span>
+          </div>
+          <div class="member-grid" style="margin-bottom:32px;">
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Cey Wills" data-rank="Officer III" data-badge="21560"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Cey Wills" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER III</div>
+              <div class="member-name">Cey Wills</div>
+              <div class="member-badge">#21560</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Tweed Langers" data-rank="Officer III" data-badge="21096"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Tweed Langers" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER III</div>
+              <div class="member-name">Tweed Langers</div>
+              <div class="member-badge">#21096</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Luther Black" data-rank="Officer III" data-badge="21344"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Luther Black" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER III</div>
+              <div class="member-name">Luther Black</div>
+              <div class="member-badge">#21344</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="John Lack" data-rank="Officer III" data-badge="21675"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="John Lack" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER III</div>
+              <div class="member-name">John Lack</div>
+              <div class="member-badge">#21675</div>
+            </div>
+          </div>
+
+          <div class="rank-label">
+            <span>Officer II</span>
+            <span class="rank-count">09 KİŞİ</span>
+          </div>
+          <div class="member-grid" style="margin-bottom:32px;">
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Alaska Leo Martinez" data-rank="Officer II" data-badge="25055"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Alaska Leo Martinez" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Alaska Leo Martinez</div>
+              <div class="member-badge">#25055</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Roberto Martin" data-rank="Officer II" data-badge="28562"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Roberto Martin" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Roberto Martin</div>
+              <div class="member-badge">#28562</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Bobline Dwayne" data-rank="Officer II" data-badge="25345"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Bobline Dwayne" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Bobline Dwayne</div>
+              <div class="member-badge">#25345</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Oliver Smith" data-rank="Officer II" data-badge="28750"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Oliver Smith" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Oliver Smith</div>
+              <div class="member-badge">#28750</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Benja Carlem" data-rank="Officer II" data-badge="27716"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Benja Carlem" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Benja Carlem</div>
+              <div class="member-badge">#27716</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Artem Milatos" data-rank="Officer II" data-badge="25099"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Artem Milatos" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Artem Milatos</div>
+              <div class="member-badge">#25099</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Leak Poster" data-rank="Officer II" data-badge="28078"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Leak Poster" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Leak Poster</div>
+              <div class="member-badge">#28078</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Xavier Brooks" data-rank="Officer II" data-badge="28856"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Xavier Brooks" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Xavier Brooks</div>
+              <div class="member-badge">#28856</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Isaac Paul" data-rank="Officer II" data-badge="25218"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Isaac Paul" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER II</div>
+              <div class="member-name">Isaac Paul</div>
+              <div class="member-badge">#25218</div>
+            </div>
+          </div>
+
+          <div class="rank-label">
+            <span>Officer I</span>
+            <span class="rank-count">08 KİŞİ</span>
+          </div>
+          <div class="member-grid">
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Joseph Rivera" data-rank="Officer I" data-badge="28939"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Joseph Rivera" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER I</div>
+              <div class="member-name">Joseph Rivera</div>
+              <div class="member-badge">#28939</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Mason Galluci" data-rank="Officer I" data-badge="28917"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Mason Galluci" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER I</div>
+              <div class="member-name">Mason Galluci</div>
+              <div class="member-badge">#28917</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Simon Harding" data-rank="Officer I" data-badge="28922"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Simon Harding" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER I</div>
+              <div class="member-name">Simon Harding</div>
+              <div class="member-badge">#28922</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Lewo Los" data-rank="Officer I" data-badge="28962"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Lewo Los" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER I</div>
+              <div class="member-name">Lewo Los</div>
+              <div class="member-badge">#28962</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Brian Mercer" data-rank="Officer I" data-badge="28924"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Brian Mercer" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER I</div>
+              <div class="member-name">Brian Mercer</div>
+              <div class="member-badge">#28924</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="George Adams" data-rank="Officer I" data-badge="30087"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="George Adams" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER I</div>
+              <div class="member-name">George Adams</div>
+              <div class="member-badge">#30087</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Lyrical Anthony" data-rank="Officer I" data-badge="28961"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Lyrical Anthony" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER I</div>
+              <div class="member-name">Lyrical Anthony</div>
+              <div class="member-badge">#28961</div>
+            </div>
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Oscar Town" data-rank="Officer I" data-badge="28920"
+              data-unit="Field Staff" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Oscar Town" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">OFFICER I</div>
+              <div class="member-name">Oscar Town</div>
+              <div class="member-badge">#28920</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="hr-divider" />
+
+      <!-- K9 UNIT -->
+      <div style="margin-bottom:60px;">
+        <div class="staff-group-label">SPECIAL UNIT — K9</div>
+        <div class="rank-section">
+          <div class="rank-label">
+            <span>K9 Unit</span>
+            <span class="rank-count">01 KİŞİ</span>
+          </div>
+          <div class="member-grid">
+            <div class="member-card" onclick="openMember(this)"
+              data-name="Max (ARDA)" data-rank="K9 Unit" data-badge="K9"
+              data-unit="Special Unit — K9" data-medals="—" data-disc="—" data-photo="resimler/logo.png">
+              <div class="member-avatar"><img src="resimler/logo.png" alt="Max K9" onerror="this.style.opacity='0'" /></div>
+              <div class="member-rank">K9 UNIT</div>
+              <div class="member-name">Max</div>
+              <div class="member-badge">K9 — ARDA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div style="text-align:center; margin-top:48px; padding:40px; background:var(--bg-card); border:1px solid var(--border); border-radius:8px;">
+        <div style="font-family:'Oswald',sans-serif; font-size:26px; font-weight:600; color:#fff; margin-bottom:12px;">Ekibimize Katılmak İster misin?</div>
+        <p style="color:var(--text-muted); font-size:14px; margin-bottom:24px;">
+          LAPD Rampart bünyesinde görev almak için başvuru formunu doldur,
+          süreci takip et ve ekibimizin bir parçası ol.
+        </p>
+        <a href="forms.html" class="btn btn-primary">Başvuru Yap</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ MEMBER MODAL ═══════════ -->
+  <div class="member-modal-overlay" id="memberModal" onclick="handleModalClick(event)">
+    <div class="member-modal">
+      <button class="modal-close-btn" onclick="closeMemberModal()">✕</button>
+      <div class="modal-header">
+        <div class="modal-avatar">
+          <img id="modalPhoto" src="resimler/logo.png" alt="Personel" />
+        </div>
+        <div>
+          <div class="modal-info-rank" id="modalRank"></div>
+          <div class="modal-info-name" id="modalName"></div>
+          <div class="modal-info-badge">Rozet No: <strong id="modalBadge" style="color:var(--gold);"></strong></div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-row">
+          <span class="modal-row-label">Birim</span>
+          <span class="modal-row-val" id="modalUnit"></span>
+        </div>
+        <div class="modal-row">
+          <span class="modal-row-label">Madalyalar</span>
+          <span class="modal-row-val" id="modalMedals"></span>
+        </div>
+        <div class="modal-row">
+          <span class="modal-row-label">Disiplin Soruşturması</span>
+          <span class="modal-row-val" id="modalDisc"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="resimler/logo.png" alt="LAPD Rampart" />
+          <p>Los Angeles Police Department — Rampart Division. Disiplin, dürüstlük ve topluma hizmet ilkeleriyle kesintisiz faaliyet gösteren bir kolluk kuvveti topluluğu.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasyon</h4>
+          <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="team.html">Ekip Kadrosu</a></li>
+            <li><a href="forms.html">Başvuru Formları</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Birimler</h4>
+          <ul>
+            <li><a href="#">Central Patrol Division</a></li>
+            <li><a href="#">Detective Division</a></li>
+            <li><a href="#">Traffic Services</a></li>
+            <li><a href="#">Special Operations</a></li>
+            <li><a href="#">Internal Affairs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kurumsal</h4>
+          <ul>
+            <li><a href="about.html">Misyon &amp; Vizyon</a></li>
+            <li><a href="forms.html">Kariyer</a></li>
+            <li><a href="forms.html">Şikayet Başvurusu</a></li>
+            <li><a href="forms.html">Övgü Başvurusu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LAPD Rampart Community Police Station. Tüm hakları saklıdır.</p>
+        <p>Los Angeles, CA 90057</p>
+      </div>
+      <p class="footer-disclaimer" style="text-align:center; margin-top:16px;">
+        Bu site FiveM rol yapma topluluğuna aittir. Gerçek LAPD veya herhangi bir resmi devlet kurumuyla bağlantısı yoktur.
+      </p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu   = document.getElementById('navMenu');
+  toggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+  function openMember(el) {
+    document.getElementById('modalPhoto').src         = el.dataset.photo || 'resimler/logo.png';
+    document.getElementById('modalRank').textContent  = el.dataset.rank;
+    document.getElementById('modalName').textContent  = el.dataset.name;
+    document.getElementById('modalBadge').textContent = '#' + el.dataset.badge;
+    document.getElementById('modalUnit').textContent  = el.dataset.unit;
+    document.getElementById('modalMedals').textContent = el.dataset.medals;
+    document.getElementById('modalDisc').textContent  = el.dataset.disc;
+    document.getElementById('memberModal').classList.add('open');
+  }
+
+  function closeMemberModal() {
+    document.getElementById('memberModal').classList.remove('open');
+  }
+
+  function handleModalClick(e) {
+    if (e.target.id === 'memberModal') closeMemberModal();
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMemberModal(); });
+</script>
+</body>
+</html>
