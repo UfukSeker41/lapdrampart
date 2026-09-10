@@ -6,6 +6,7 @@
   <title>LAPD Rampart — Community Police Station</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="resimler/logo.png" />
+  <script src="theme.js"></script>
 </head>
 <body>
 
@@ -27,6 +28,7 @@
   <div class="nav-toggle" id="navToggle" aria-label="Menüyü aç">
     <span></span><span></span><span></span>
   </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Temayı değiştir">☀️</button>
 </nav>
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -128,58 +130,58 @@
         <h2 class="section-title">Sahadaki Rampart</h2>
         <div class="divider"></div>
       </div>
-      <div class="photo-grid">
+      <div class="photo-grid" id="photoTrack">
 
-        <div class="photo-item" onclick="openLightbox('resimler/foto1.png','Devriye Operasyonu')">
+        <div class="photo-item" onclick="openLightbox(0)">
           <img src="resimler/foto1.png" alt="Devriye Operasyonu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto1.png</span></div>
           <div class="photo-overlay">🔍</div>
           <div class="photo-caption">END OF WATCH</div>
         </div>
 
-        <div class="photo-item" onclick="openLightbox('resimler/foto2.png','İstasyon Roll Call')">
+        <div class="photo-item" onclick="openLightbox(1)">
           <img src="resimler/foto2.png" alt="İstasyon Roll Call" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto2.png</span></div>
           <div class="photo-overlay">🔍</div>
           <div class="photo-caption">CODE 4</div>
         </div>
 
-        <div class="photo-item" onclick="openLightbox('resimler/foto3.png','K9 Operasyonu')">
+        <div class="photo-item" onclick="openLightbox(2)">
           <img src="resimler/foto3.png" alt="K9 Operasyonu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto3.png</span></div>
           <div class="photo-overlay">🔍</div>
           <div class="photo-caption">Ekip</div>
         </div>
 
-        <div class="photo-item" onclick="openLightbox('resimler/foto4.png','Trafik Denetimi')">
+        <div class="photo-item" onclick="openLightbox(3)">
           <img src="resimler/foto4.png" alt="Trafik Denetimi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto4.png</span></div>
           <div class="photo-overlay">🔍</div>
           <div class="photo-caption">Gece Devriyesi</div>
         </div>
 
-        <div class="photo-item" onclick="openLightbox('resimler/foto5.png','Özel Operasyon')">
+        <div class="photo-item" onclick="openLightbox(4)">
           <img src="resimler/foto5.png" alt="Özel Operasyon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto5.png</span></div>
           <div class="photo-overlay">🔍</div>
           <div class="photo-caption">Sergeant</div>
         </div>
 
-        <div class="photo-item" onclick="openLightbox('resimler/foto6.png','Ekip Fotoğrafı')">
+        <div class="photo-item" onclick="openLightbox(5)">
           <img src="resimler/foto6.png" alt="Ekip Fotoğrafı" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto6.png</span></div>
           <div class="photo-overlay">🔍</div>
           <div class="photo-caption">Air Support</div>
         </div>
 
-        <div class="photo-item" onclick="openLightbox('resimler/foto7.png','Toplum Etkinliği')">
+        <div class="photo-item" onclick="openLightbox(6)">
           <img src="resimler/foto7.png" alt="Toplum Etkinliği" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto7.png</span></div>
           <div class="photo-overlay">🔍</div>
           <div class="photo-caption">Toplum Etkinliği</div>
         </div>
 
-        <div class="photo-item" onclick="openLightbox('resimler/foto8.png','Gece Devriyesi')">
+        <div class="photo-item" onclick="openLightbox(7)">
           <img src="resimler/foto8.png" alt="Gece Devriyesi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="photo-placeholder" style="display:none;"><span class="ph-icon">📷</span><span class="ph-text">foto8.png</span></div>
           <div class="photo-overlay">🔍</div>
@@ -193,7 +195,9 @@
   <!-- LİGHTBOX -->
   <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-nav prev" onclick="event.stopPropagation();shiftLightbox(-1)" aria-label="Önceki fotoğraf">‹</button>
     <img id="lightboxImg" src="" alt="" />
+    <button class="lightbox-nav next" onclick="event.stopPropagation();shiftLightbox(1)" aria-label="Sonraki fotoğraf">›</button>
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
 
@@ -337,17 +341,46 @@
   const menu   = document.getElementById('navMenu');
   toggle.addEventListener('click', () => menu.classList.toggle('open'));
 
-  function openLightbox(src, caption) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightboxCaption').textContent = caption;
+  // Sahadaki Rampart gallery photos, in display order
+  const galleryPhotos = [
+    { src: 'resimler/foto1.png', caption: 'END OF WATCH' },
+    { src: 'resimler/foto2.png', caption: 'CODE 4' },
+    { src: 'resimler/foto3.png', caption: 'Ekip' },
+    { src: 'resimler/foto4.png', caption: 'Gece Devriyesi' },
+    { src: 'resimler/foto5.png', caption: 'Sergeant' },
+    { src: 'resimler/foto6.png', caption: 'Air Support' },
+    { src: 'resimler/foto7.png', caption: 'Toplum Etkinliği' },
+    { src: 'resimler/foto8.png', caption: 'Boş' }
+  ];
+  let lightboxIndex = 0;
+
+  function renderLightbox() {
+    const photo = galleryPhotos[lightboxIndex];
+    document.getElementById('lightboxImg').src = photo.src;
+    document.getElementById('lightboxCaption').textContent = photo.caption;
+  }
+
+  function openLightbox(index) {
+    lightboxIndex = index;
+    renderLightbox();
     document.getElementById('lightbox').classList.add('open');
+  }
+
+  function shiftLightbox(direction) {
+    lightboxIndex = (lightboxIndex + direction + galleryPhotos.length) % galleryPhotos.length;
+    renderLightbox();
   }
 
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
   }
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') shiftLightbox(1);
+    if (e.key === 'ArrowLeft') shiftLightbox(-1);
+  });
 </script>
 </body>
 </html>

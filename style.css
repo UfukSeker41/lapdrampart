@@ -13,10 +13,40 @@
   --gold-light:   #e8c86a;
   --text:         #d8dde8;
   --text-muted:   #7a8aaa;
+  --heading:      #fff;
   --border:       rgba(26, 95, 176, 0.3);
   --border-gold:  rgba(200, 168, 75, 0.4);
   --nav-h:        72px;
 }
+
+/* ─── LIGHT THEME ─────────────────────────────── */
+html.light-theme {
+  --bg-dark:      #eef1f6;
+  --bg-card:      #ffffff;
+  --bg-navy:      #e4e9f1;
+  --text:         #232c3d;
+  --text-muted:   #5b6b85;
+  --heading:      #10141d;
+  --border:       rgba(26, 95, 176, 0.18);
+  --border-gold:  rgba(200, 168, 75, 0.45);
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--gold);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+  margin-left: 14px;
+}
+.theme-toggle:hover { border-color: var(--gold); transform: translateY(-1px); }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -183,7 +213,7 @@ body {
   font-size: 38px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--heading);
   line-height: 1.15;
 }
 
@@ -470,6 +500,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .leader-placeholder {
@@ -493,7 +524,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: 26px;
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
   margin-bottom: 14px;
 }
 
@@ -588,7 +619,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
   margin-bottom: 8px;
 }
 
@@ -650,7 +681,7 @@ body {
   color: var(--text-muted);
 }
 
-.member-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.member-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
 .member-rank {
   font-family: 'Oswald', sans-serif;
@@ -665,7 +696,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
   margin-bottom: 5px;
 }
 
@@ -733,7 +764,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: clamp(36px, 5vw, 58px);
   font-weight: 700;
-  color: #fff;
+  color: var(--heading);
   letter-spacing: 2px;
   line-height: 1.1;
   position: relative;
@@ -809,7 +840,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: clamp(26px, 3vw, 38px);
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -833,7 +864,7 @@ body {
   font-size: 14px;
   color: var(--text);
   padding: 8px 0;
-  border-bottom: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid var(--border);
 }
 
 .about-list li::before {
@@ -857,7 +888,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -912,7 +943,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
   letter-spacing: 1px;
   margin-bottom: 8px;
 }
@@ -964,7 +995,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
   margin-bottom: 6px;
 }
 
@@ -984,7 +1015,7 @@ body {
 .form-panel h3 {
   font-family: 'Oswald', sans-serif;
   font-size: 22px;
-  color: #fff;
+  color: var(--heading);
   margin-bottom: 28px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border);
@@ -1155,7 +1186,6 @@ footer {
   .leader-card { flex-direction: column; text-align: center; }
   .leader-img-wrap { margin: 0 auto; }
   .hero-stats { gap: 30px; flex-wrap: wrap; bottom: 20px; }
-  .photo-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ─── PHOTO GALLERY ─────────────────────────────────── */
@@ -1163,6 +1193,9 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+}
+@media (max-width: 1024px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .photo-item {
   position: relative;
@@ -1276,6 +1309,30 @@ footer {
   transition: .2s;
 }
 .lightbox-close:hover { background: rgba(255,255,255,.2); }
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,.2); }
+.lightbox-nav.prev { left: 20px; }
+.lightbox-nav.next { right: 20px; }
+@media (max-width: 640px) {
+  .lightbox-nav { width: 42px; height: 42px; font-size: 18px; }
+  .lightbox-nav.prev { left: 8px; }
+  .lightbox-nav.next { right: 8px; }
+}
 
 /* ─── MEMBER MODAL ───────────────────────────────────── */
 .member-card { cursor: pointer; }
@@ -1325,7 +1382,7 @@ footer {
   justify-content: center;
   flex-shrink: 0;
 }
-.modal-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.modal-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .modal-info-rank {
   font-family: 'Oswald', sans-serif;
   font-size: 11px;
@@ -1338,7 +1395,7 @@ footer {
   font-family: 'Oswald', sans-serif;
   font-size: 22px;
   font-weight: 600;
-  color: #fff;
+  color: var(--heading);
   line-height: 1.2;
 }
 .modal-info-badge { font-size: 13px; color: var(--text-muted); margin-top: 5px; }
@@ -1349,7 +1406,7 @@ footer {
   align-items: flex-start;
   gap: 12px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid var(--border);
 }
 .modal-row:last-child { border-bottom: none; }
 .modal-row-label {
@@ -1376,7 +1433,7 @@ footer {
   justify-content: center;
   transition: .2s;
 }
-.modal-close-btn:hover { background: rgba(255,255,255,.16); color: #fff; }
+.modal-close-btn:hover { background: rgba(255,255,255,.16); color: var(--heading); }
 /* Staff group label */
 .staff-group-label {
   font-family: 'Oswald', sans-serif;
@@ -1393,4 +1450,4 @@ footer {
   background: linear-gradient(135deg, var(--bg-card), rgba(200,168,75,.07));
   border-color: rgba(200,168,75,.4);
 }
-@media (max-width: 1024px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
+
